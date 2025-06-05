@@ -1,0 +1,25 @@
+
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>Offline Map - Barcelona_Detailed</title>
+            <meta charset="utf-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <link rel="stylesheet" href="file:///C:\Users\MGn\PycharmProjects\TestGUI\libs\leaflet\leaflet.css" />
+            <script src="file:///C:\Users\MGn\PycharmProjects\TestGUI\libs\leaflet\leaflet.js"></script>
+            <style>html, body, #map_div { height: 100%; width: 100%; margin: 0; padding: 0; background-color: #ddd; }</style>
+        </head>
+        <body>
+            <div id="map_div"></div>
+            <script>
+                var map = L.map('map_div', { preferCanvas: true }).setView([41.0116, 28.9833], 7);
+                L.tileLayer('file:///C:/Users/MGn/PycharmProjects/TestGUI/media/maps/tiles_by_city/Barcelona_Detailed/{z}/{x}/{y}.png', {
+                    attribution: '&copy; OpenStreetMap contributors',
+                    minZoom: 1, maxZoom: 18, noWrap: true,
+                }).addTo(map);
+                map.openPopup('Barcelona Detailed', [41.0116, 28.9833]);
+                L.control.scale({imperial: false}).addTo(map);
+            </script>
+        </body>
+        </html>
+        
